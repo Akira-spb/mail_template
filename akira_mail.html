@@ -1,326 +1,455 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
- <head>
-  <meta charset="utf-8">
-
-  Mail
-  <style type="text/css">/*////// RESET STYLES //////*/
-   body, #bodyTable, #bodyCell{height:100% !important; margin:0; padding:0; width:100% !important;}
-   table{border-collapse:collapse;}
-   img, a img{border:0; outline:none; text-decoration:none;}
-   h1, h2, h3, h4, h5, h6{margin:0; padding:0;}
-   p{margin: 1em 0;}
-
-   /*////// CLIENT-SPECIFIC STYLES //////*/
-   .ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail/Outlook.com to display emails at full width. */
-   .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div{line-height:100%;} /* Force Hotmail/Outlook.com to display line heights normally. */
-   table, td{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove spacing between tables in Outlook 2007 and up. */
-   #outlook a{padding:0;} /* Force Outlook 2007 and up to provide a "view in browser" message. */
-   img{-ms-interpolation-mode: bicubic;} /* Force IE to smoothly render resized images. */
-   body, table, td, p, a, li, blockquote{-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%;} /* Prevent Windows- and Webkit-based mobile platforms from changing declared text sizes. */
-
-   /*////// FRAMEWORK STYLES //////*/
-   .flexibleContainerCell{padding-top:20px; }
-   .flexibleImage{height:auto;}
-   .bottomShim{padding-bottom:20px;}
-   .imageContent, .imageContentLast{padding-bottom:20px;}
-   .nestedContainerCell{padding-top:20px;}
-
-   @font-face {
-    font-family: 'gua';
-    src: url('library/gnuolane.ttf');
-   }
-   /*////// GENERAL STYLES //////*/
-   body, #bodyTable{
-    background-color: #282828}
-   #bodyCell{padding-top:40px; padding-bottom:40px;}
-   #emailBody{background-color: #ffffff;border-collapse:collapse;}
-   h1, h2, h3, h4, h5, h6{color:#202020; font-family:Helvetica; font-size:20px; line-height:125%; text-align:Left;}
-   .textContent, .textContentLast{color:#404040; font-family:Helvetica; font-size:16px; line-height:125%; text-align:Left; padding-bottom:20px;}
-   .textContent a, .textContentLast a{color:#2C9AB7; text-decoration:underline;}
-   .nestedContainer{background-color:#ffffff;}
-   .emailButton{background-color:#2C9AB7; border-collapse:separate; border-radius:4px;}
-   .buttonContent{color:#FFFFFF; font-family:Helvetica; font-size:18px; font-weight:bold; line-height:100%; padding:15px; text-align:center;}
-   .buttonContent a{color:#FFFFFF; display:block; text-decoration:none;}
-   .emailCalendar{background-color:#FFFFFF; border:1px solid #CCCCCC;}
-   .emailCalendarMonth{background-color:#2C9AB7; color:#FFFFFF; font-family:Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; padding-top:10px; padding-bottom:10px; text-align:center;}
-   .emailCalendarDay{color:#2C9AB7; font-family:Helvetica, Arial, sans-serif; font-size:60px; font-weight:bold; line-height:100%; padding-top:20px; padding-bottom:20px; text-align:center;}
-
-   /*////// MOBILE STYLES //////*/
-   @media only screen and (max-width: 690px){
-    /*////// CLIENT-SPECIFIC STYLES //////*/
-    body{width:100% !important; min-width:100% !important;} /* Force iOS Mail to render the email at full width. */
-
-    /*////// FRAMEWORK STYLES //////*/
-    /*
-    CSS selectors are written in attribute
-    selector format to prevent Yahoo Mail
-    from rendering media query styles on
-    desktop.
-    */
-    table[id="emailBody"], table[class="flexibleContainer"]{width:100% !important;}
-
-    /*
-    The following style rule makes any
-    image classed with 'flexibleImage'
-    fluid when the query activates.
-    Make sure you add an inline max-width
-    to those images to prevent them
-    from blowing out.
-    */
-    img[class="flexibleImage"]{height:auto !important; width:100% !important;}
-
-    /*
-    Make buttons in the email span the
-    full width of their container, allowing
-    for left- or right-handed ease of use.
-    */
-    table[class="emailButton"]{width:100% !important;}
-    td[class="buttonContent"]{padding:0 !important;}
-    td[class="buttonContent"] a{padding:15px !important;}
-
-    td[class="textContentLast"], td[class="imageContentLast"]{padding-top:20px !important;}
-
-    /*////// GENERAL STYLES //////*/
-    td[id="bodyCell"]{padding-top:10px !important; padding-Right:10px !important; padding-Left:10px !important;}
-    td[class="elementCenter"] {
-     text-align: center !important;
+  <head>
+    <meta charset="utf-8">
+    
+  <style type="text/css">
+    body,#bodyTable,#bodyCell{
+      height:100% !important;
+      margin:0;
+      padding:0;
+      width:100% !important;
     }
-    p[class*="elementCenter"] {
-     text-align: center !important;
+    table{
+      border-collapse:collapse;
     }
-    span[class*="sm_block"] {
-     display: block !important;
+    img,a img{
+      border:0;
+      outline:none;
+      text-decoration:none;
     }
-   }
-  </style>
-  <!--
-Outlook Conditional CSS
+    h1,h2,h3,h4,h5,h6{
+      margin:0;
+      padding:0;
+    }
+    p{
+      margin:1em 0;
+    }
+    .ReadMsgBody{
+      width:100%;
+    }
+    .ExternalClass{
+      width:100%;
+    }
+    .ExternalClass,.ExternalClass p,.ExternalClass span,.ExternalClass font,.ExternalClass td,.ExternalClass div{
+      line-height:100%;
+    }
+    table,td{
+      mso-table-lspace:0;
+      mso-table-rspace:0;
+    }
+    #outlook a{
+      padding:0;
+    }
+    img{
+      -ms-interpolation-mode:bicubic;
+    }
+    body,table,td,p,a,li,blockquote{
+      -ms-text-size-adjust:100%;
+      -webkit-text-size-adjust:100%;
+    }
+    .flexibleContainerCell{
+      padding-top:20px;
+    }
+    .flexibleImage{
+      height:auto;
+    }
+    .bottomShim{
+      padding-bottom:20px;
+    }
+    .imageContent,.imageContentLast{
+      padding-bottom:20px;
+    }
+  @font-face {font-family:'gua';        src:url(library/gnuolane.ttf);}
+    .nestedContainerCell{
+      padding-top:20px;
+    }
+    body,#bodyTable{
+      background-color:#282828;
+    }
+    #bodyCell{
+      padding-top:40px;
+      padding-bottom:40px;
+    }
+    #emailBody{
+      background-color:#ffffff;
+      border-collapse:collapse;
+    }
+    h1,h2,h3,h4,h5,h6{
+      color:#202020;
+      font-family:Helvetica;
+      font-size:20px;
+      line-height:125%;
+      text-align:Left;
+    }
+    .textContent,.textContentLast{
+      color:#404040;
+      font-family:Helvetica;
+      font-size:16px;
+      line-height:125%;
+      text-align:Left;
+      padding-bottom:20px;
+    }
+    .textContent a,.textContentLast a{
+      color:#2C9AB7;
+      text-decoration:underline;
+    }
+    .nestedContainer{
+      background-color:#ffffff;
+    }
+    .emailButton{
+      background-color:#2C9AB7;
+      border-collapse:separate;
+      border-radius:4px;
+    }
+    .buttonContent{
+      color:#FFFFFF;
+      font-family:Helvetica;
+      font-size:18px;
+      font-weight:bold;
+      line-height:100%;
+      padding:15px;
+      text-align:center;
+    }
+    .buttonContent a{
+      color:#FFFFFF;
+      display:block;
+      text-decoration:none;
+    }
+    .emailCalendar{
+      background-color:#FFFFFF;
+      border:1px solid #CCCCCC;
+    }
+    .emailCalendarMonth{
+      background-color:#2C9AB7;
+      color:#FFFFFF;
+      font-family:Helvetica,Arial,sans-serif;
+      font-size:16px;
+      font-weight:bold;
+      padding-top:10px;
+      padding-bottom:10px;
+      text-align:center;
+    }
+    .emailCalendarDay{
+      color:#2C9AB7;
+      font-family:Helvetica,Arial,sans-serif;
+      font-size:60px;
+      font-weight:bold;
+      line-height:100%;
+      padding-top:20px;
+      padding-bottom:20px;
+      text-align:center;
+    }
+  @media only screen and (max-width: 690px){
+    body{
+      width:100% !important;
+      min-width:100% !important;
+    }
 
-These two style blocks target Outlook 2007 & 2010 specifically, forcing
-columns into a single vertical stack as on mobile clients. This is
-primarily done to avoid the 'page break bug' and is optional.
+} @media only screen and (max-width: 690px){
+    table[id=emailBody],table[class=flexibleContainer]{
+      width:100% !important;
+    }
 
-More information here:
-http://templates.mailchimp.com/development/css/outlook-conditional-css
---><!--[if mso 12]>
-<style type="text/css">
-.flexibleContainer{display:block !important; width:100% !important;}
-</style>
-<![endif]--><!--[if mso 14]>
-<style type="text/css">
-.flexibleContainer{display:block !important; width:100% !important;}
-</style>
-<![endif]-->
- </head>
- <body>
+} @media only screen and (max-width: 690px){
+    img[class=flexibleImage]{
+      height:auto !important;
+      width:100% !important;
+    }
+
+} @media only screen and (max-width: 690px){
+    table[class=emailButton]{
+      width:100% !important;
+    }
+
+} @media only screen and (max-width: 690px){
+    td[class=buttonContent]{
+      padding:0 !important;
+    }
+
+} @media only screen and (max-width: 690px){
+    td[class=buttonContent] a{
+      padding:15px !important;
+    }
+
+} @media only screen and (max-width: 690px){
+    td[class=textContentLast],td[class=imageContentLast]{
+      padding-top:20px !important;
+    }
+
+} @media only screen and (max-width: 690px){
+    td[id=bodyCell]{
+      padding-top:10px !important;
+      padding-right:10px !important;
+      padding-left:10px !important;
+    }
+
+} @media only screen and (max-width: 690px){
+    td[class=elementCenter]{
+      text-align:center !important;
+    }
+
+} @media only screen and (max-width: 690px){
+    p[class*=elementCenter]{
+      text-align:center !important;
+    }
+
+} @media only screen and (max-width: 690px){
+    span[class*=sm_block]{
+      display:block !important;
+    }
+
+}</style></head>
+  <body>
+    <p>
+    Mail
+    <!--
+    Outlook Conditional CSS
+    These two style blocks target Outlook 2007 &amp; 2010 specifically, forcing
+    columns into a single vertical stack as on mobile clients. This is
+    primarily done to avoid the 'page break bug' and is optional.
+    More information here:
+    http://templates.mailchimp.com/development/css/outlook-conditional-css
+    -->
+    <!--[if mso 12]>
+    <style>
+      .flexibleContainer {
+      display:block !important;
+      width:100% !important;
+      }
+    </style>
+    <![endif]-->
+    <!--[if mso 14]>
+    <style>
+      .flexibleContainer {
+      display:block !important;
+      width:100% !important;
+      }
+    </style>
+    <![endif]-->
+  </p>
   <center>
-   <table bgcolor="rgb(53, 60, 72)" border="0" cellpadding="20" cellspacing="0" height="100%" id="bodyTable" width="100%">
-    <tbody>
-     <tr>
-      <td align="center" id="bodyCell" valign="top"><!-- EMAIL CONTAINER // --><!--
-
--->
-       <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" id="emailBody" style="background-color: #ffffff;" width="600"><!-- MODULE ROW // --><!--
-
--->
-        <tbody>
-         <tr>
-          <td align="center" valign="top"><!-- CENTERING TABLE // --><!--
-
--->
-           <table border="0" cellpadding="0" cellspacing="0" width="100%">
-            <tbody>
-             <tr>
-              <td align="center" valign="top"><!-- FLEXIBLE CONTAINER // --><!--
-
---><!-- // FLEXIBLE CONTAINER --></td>
-             </tr>
-            </tbody>
-           </table>
-           <!-- // CENTERING TABLE --></td>
-         </tr>
-         <!-- // MODULE ROW --><!-- MODULE ROW // -->� <!-- // MODULE ROW --> <!-- MODULE ROW // --> <!-- margin row --><!-- end margin row --><!-- // MODULE ROW --> <!-- MODULE ROW // --><!-- MODULE ROW --> <!-- margin row --> <!-- end margin row -->
-         <tr>
-          <td align="center" valign="top"><!-- CENTERING TABLE // -->
-           <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#f5f0cd" style="background-color: #ffffff;">
-            <tbody>
-             <tr>
-              <td align="center" valign="top"><!-- FLEXIBLE CONTAINER // -->
-               <table border="0" cellpadding="0" cellspacing="0" class="flexibleContainer" width="600">
-                <tbody>
-                 <tr>
-                  <td align="justify" class="flexibleContainerCell bottomShim" style="padding-top: 0; padding-bottom: 0;" valign="top" width="600"><!-- CONTENT TABLE // --> 
-                  <a href="http://kira-all.ru" target="_blank"><img src="assets/akira_img/header.png" draggable="false"></a></td>
-                 </tr>
+    <table border="0" cellpadding="20" cellspacing="0" id="bodyTable" width="100%" style="height:100%;">
+      <tbody>
+        <tr>
+          <td align="center" id="bodyCell" valign="top">
+            <!-- EMAIL CONTAINER // -->
+            <!--
+            -->
+            <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" id="emailBody" style="background-color:#ffffff;" width="600">
+              <!-- MODULE ROW // -->
+              <!--
+              -->
+              <tbody>
+                <tr>
+                  <td align="center" valign="top">
+                    <!-- CENTERING TABLE // -->
+                    <!--
+                    -->
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                      <tbody>
+                        <tr>
+                          <td align="center" valign="top">
+                            <!-- FLEXIBLE CONTAINER // -->
+                            <!--
+                            -->
+                            <!-- // FLEXIBLE CONTAINER -->
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <!-- // CENTERING TABLE -->
+                  </td>
+                </tr>
+                <!-- // MODULE ROW -->
+                <!-- MODULE ROW // -->
+                <!-- // MODULE ROW --> <!-- MODULE ROW // --> <!-- margin row -->
+                <!-- end margin row -->
+                <!-- // MODULE ROW --> <!-- MODULE ROW // -->
+                <!-- MODULE ROW --> <!-- margin row --> <!-- end margin row -->
+                <tr>
+                  <td align="center" valign="top">
+                    <!-- CENTERING TABLE // -->
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#ffffff" style="background-color:#ffffff;">
+                      <tbody>
+                        <tr>
+                          <td align="center" valign="top">
+                            <!-- FLEXIBLE CONTAINER // -->
+                            <table border="0" cellpadding="0" cellspacing="0" class="flexibleContainer" width="600">
+                              <tbody>
+                                <tr>
+                                  <td align="justify" class="flexibleContainerCell bottomShim" style="padding-top:0;padding-bottom:0;" valign="top" width="600">
+                                    <!-- CONTENT TABLE // -->
+                                    <a href="http://kira-all.ru" target="_blank"><img src="http://arhproekt.pro/wp-content/uploads/2017/08/header.png" alt="header.png"></a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <!-- // FLEXIBLE CONTAINER -->
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="height:30px;"></td>
+                </tr>
+                <tr>
+                  <td valign="top" width="700" class="flexibleContainerCell" style="padding-left:65px;padding-right:65px;padding-top:50px;">
+                    <!-- CONTENT TABLE // -->
+                    <!--
+                    
+                    -->
+                    <table align="left" border="0" cellpadding="0" cellspacing="0" width="320" class="flexibleContainer">
+                      <tr>
+                        <td valign="top" class="textContent">
+                          <p style="font-family:Helvetica, 'sans-serif';font-size:16px;color:#2b2b2c;margin:0;line-height:1.5;"><strong style="color:#2b2b2c;">Самое время озадачить
+                            корпоративного дедушку Мороза</strong>
+                          </p>
+                          <p style="color:#2b2b2c;font-family:'Trebuchet MS', Arial, Helvetica, sans-serif;font-size:13px;line-height:1.5;">Летом дедушка знатно демпит,
+                            как и продавцы
+                            сувенирной продукции!</p>
+                            <p style="padding-top:35px;">
+                              <img src="http://arhproekt.pro/wp-content/uploads/2017/08/tree.png" width="220" alt="tree.png">
+                            </p>
+                          </td>
+                        </tr>
+                      </table>
+                      <!-- // CONTENT TABLE -->
+                      <!-- CONTENT TABLE // -->
+                      <table align="right" border="0" cellpadding="0" cellspacing="0" width="200" class="flexibleContainer">
+                        <tr>
+                          <td valign="top" class="textContentLast" align="center" style="text-align:center;">
+                            <p>
+                            <img src="http://arhproekt.pro/wp-content/uploads/2017/08/dead_ice.png" width="240" class="flexibleImage" style="max-width:240px;" alt="dead_ice.png">
+                          </p>
+                          <p style="font-family:Helvetica, 'sans-serif';font-size:16px;padding-top:35px;color:#2b2b2c;margin:0;line-height:1.5;text-align:right;"><strong style="color:#2b2b2c;">Рекламное конструкторское
+                            бюро AKIRA
+                            готово выступить в роли
+                            вашего дедушки Мороза,
+                            – работаем ежегодно,
+                            прибыльно и успешно.</strong>
+                          </p>
+                          <p style="color:#2b2b2c;font-family:'Trebuchet MS', Arial, Helvetica, sans-serif;font-size:13px;line-height:1.5;text-align:right;">AKIRA подберет коллекцию подарков вашим золотым и бронзовым клиентам
+                            и заботливо их упакует
+                            (да, и клиентов тоже).</p>
+                          </td>
+                        </tr>
+                      </table>
+                      <!-- // CONTENT TABLE -->
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="height:30px;"></td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="top">
+                      <!-- CENTERING TABLE // -->
+                      <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#f5f0cd" style="background-color:#ffffff;">
+                        <tbody>
+                          <tr>
+                            <td align="center" valign="top">
+                              <!-- FLEXIBLE CONTAINER // -->
+                              <table border="0" cellpadding="0" cellspacing="0" class="flexibleContainer" width="600">
+                                <tbody>
+                                  <tr>
+                                    <td align="justify" class="flexibleContainerCell bottomShim" style="padding-top:0;padding-bottom:0;padding-left:40px;" valign="top" width="600">
+                                      <!-- CONTENT TABLE // -->
+                                      <h3 style="color:#f10919;text-align:center;font-size:21px;">AKIRA - 10 лет на страже Нового Года!
+                                      </h3>
+                                      
+                                      <!-- // CONTENT TABLE -->
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                              <!-- // FLEXIBLE CONTAINER -->
+                            </td>
+                          </tr>
+                          <tr>
+                            <td style="height:20px;"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <!-- // CENTERING TABLE -->
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="height:50px;"></td>
+                  </tr>
+                  <tr>
+                    <td valign="top" width="700" class="flexibleContainerCell" style="padding-left:65px;padding-right:65px;background:#f10919;height:60px;">
+                      <!-- CONTENT TABLE // -->
+                      <!--
+                      
+                      -->
+                      <table align="left" border="0" cellpadding="0" cellspacing="0" width="320" class="flexibleContainer">
+                        <tr>
+                          <td valign="top" class="textContent" style="text-align:center; vertical-align: middle;
+                          padding-top: 7px;">
+                            <span style="color: #ffffff; font-size: 13px; font-weight: 400; vertical-align: middle; line-height: 2;">телефон +7 (812) 409-00-29</span>                            
+                          </td>
+                        </tr>
+                      </table>
+                      <!-- // CONTENT TABLE -->
+                      <!-- CONTENT TABLE // -->
+                      <table align="right" border="0" cellpadding="0" cellspacing="0" width="200" class="flexibleContainer">
+                        <tr>
+                          <td valign="top" class="textContentLast" align="center" style="text-align:center; padding-top: 7.5px;">
+                            
+                            <a href="http://kira-all.ru">
+                              <img src="http://arhproekt.pro/wp-content/uploads/2017/08/button.png" alt="button.png"></a>
+                              
+                            </td>
+                          </tr>
+                        </table>
+                        <!-- // CONTENT TABLE -->
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="height:30px;"></td>
+                    </tr>
+                    <!-- CENTERING TABLE // -->
+                    <tr>
+                      <td align="center" valign="top">
+                        <!-- FLEXIBLE CONTAINER // -->
+                        <table border="0" cellpadding="0" cellspacing="0" class="flexibleContainer" width="600">
+                          <tbody>
+                            <tr>
+                              <td align="justify" class="flexibleContainerCell bottomShim" style="padding-top:0;padding-bottom:0;padding-left:40px;text-align:center;" valign="top" width="600">
+                                <!-- CONTENT TABLE // -->
+                                <p style="text-align:center;">
+                                  <img src="http://arhproekt.pro/wp-content/uploads/2017/08/company_logo.png" style="display: inline-block;" alt="company_logo.png">
+                                </p>
+                                <p>
+                                <a href="mailto:office@kira-all.ru" style="text-decoration:none;"><span style="color: #2f2f2f; font-size: 13px; font-weight: 300;">e-mail: office@kira-all.ru</span></a>
+                              </p>
+                              <!-- // CONTENT TABLE -->
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <!-- // FLEXIBLE CONTAINER -->
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="height:20px;"></td>
+                  </tr>
+                  <!-- // CENTERING TABLE -->
+                  
+                  <!-- margin row --> <!-- end margin row -->
+                  <!-- END MODULE ROW -->
+                  <!-- footer --> <!-- footer -->
+                  <!-- // MODULE ROW -->
                 </tbody>
-               </table>
-               <!-- // FLEXIBLE CONTAINER --></td>
-             </tr>
-            </tbody>
-           </table>
-          </td>
-         </tr>
-         <tr>
-          <td style="height: 30px;"></td>
-         </tr>
-            <tr>
-                                                        <td valign="top" width="700" class="flexibleContainerCell" style="padding-left: 65px; padding-right: 65px; padding-top: 50px;">
-
-
-                                                            <!-- CONTENT TABLE // -->
-                                                            <!--
-                                                             
-                                                            -->
-                                                            <table align="Left" border="0" cellpadding="0" cellspacing="0" width="320" class="flexibleContainer">
-                                                                <tr>
-                                                                    <td valign="top" class="textContent">
-                                                                     <p style="font-family: 'gotham pro' 'Arial', 'Helvetica', 'sans-serif'; font-size: 16px; color: #2b2b2c; margin: 0; line-height: 1.5"><strong style="color: #2b2b2c;">Самое время озадачить 
-корпоративного дедушку Мороза</strong></p>
-                                                                      <p style="color: #2b2b2c; font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif; font-size: 13px; line-height: 1.5">Летом дедушка знатно демпит, 
-как и продавцы 
-сувенирной продукции!</p>
-<p style="padding-top: 35px;">
-  <img src="assets/akira_img/tree.png" width="220" />
-</p>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                            <!-- // CONTENT TABLE -->
-
-
-                                                            <!-- CONTENT TABLE // -->
-                                                            <table align="right" border="0" cellpadding="0" cellspacing="0" width="200" class="flexibleContainer">
-                                                                <tr>
-                                                                    <td valign="top" class="textContentLast" align="center" style="text-align: center;">
-                                                                    <p>
-                                                                         <img src="assets/akira_img/dead_ice.png" width="240" class="flexibleImage" style="max-width:240px;" />
-                                                                         </p>
-                                                                          <p style="font-family: 'gotham pro' 'Arial', 'Helvetica', 'sans-serif'; font-size: 16px; padding-top: 35px; color: #2b2b2c; margin: 0; line-height: 1.5; text-align: right;"><strong style="color: #2b2b2c;">Рекламное конструкторское 
-бюро AKIRA 
-готово выступить в роли 
-вашего дедушки Мороза, 
-– работаем ежегодно, 
-прибыльно и успешно.</strong></p>
-                                                                      <p style="color: #2b2b2c; font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif; font-size: 13px; line-height: 1.5; text-align: right;">AKIRA подберет коллекцию подарков вашим золотым и бронзовым клиентам
- и заботливо их упакует 
-(да, и клиентов тоже).</p>
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                            <!-- // CONTENT TABLE -->
-
-
-                                                        </td>
-                                                    </tr>
-         
-         <tr>
-          <td style="height: 30px;"></td>
-         </tr>
-         <tr>
-          <td align="center" valign="top"><!-- CENTERING TABLE // -->
-           <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#f5f0cd" style="background-color: #ffffff;">
-            <tbody>
-             <tr>
-              <td align="center" valign="top"><!-- FLEXIBLE CONTAINER // -->
-               <table border="0" cellpadding="0" cellspacing="0" class="flexibleContainer" width="600">
-                <tbody>
-                 <tr>
-                  <td align="justify" class="flexibleContainerCell bottomShim" style="padding-top: 0; padding-bottom: 0; padding-left: 40px;" valign="top" width="600"><!-- CONTENT TABLE // -->
-                   <h3 style="color: #f10919; text-align: center; font-size: 21px;">AKIRA - 10 лет на страже Нового Года!
-</h3>
-                
-                   <!-- // CONTENT TABLE --></td>
-                 </tr>
-                </tbody>
-               </table>
-               <!-- // FLEXIBLE CONTAINER --></td>
-             </tr>
-             <tr>
-              <td style="height: 20px;"></td>
-             </tr>
-           
-            </tbody>
-           </table>
-           <!-- // CENTERING TABLE --></td>
-         </tr>
-         <tr>
-           <td style="height: 50px;"></td>
-         </tr>
-           <tr>
-                                                        <td valign="top" width="700" class="flexibleContainerCell" style="padding-left: 65px; padding-right: 65px;background: #f10919; height: 60px;">
-
-
-                                                            <!-- CONTENT TABLE // -->
-                                                            <!--
-                                                             
-                                                            -->
-                                                            <table align="Left" border="0" cellpadding="0" cellspacing="0" width="320" class="flexibleContainer">
-                                                                <tr>
-                                                                    <td valign="top" class="textContent" style="text-align: center;">
-                                                                    <span style="color: #ffffff; font-size: 13px; font-weight: 400;">телефон +7 (812) 409-00-29</span>
-                                                                      
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                            <!-- // CONTENT TABLE -->
-
-
-                                                            <!-- CONTENT TABLE // -->
-                                                            <table align="right" border="0" cellpadding="0" cellspacing="0" width="200" class="flexibleContainer">
-                                                                <tr>
-                                                                    <td valign="top" class="textContentLast" align="center" style="text-align: center;">
-                                                                  
-                                                                         <a href="http://kira-all.ru">
-                                                                           <img src="assets/akira_img/button.png" />
-                                                                         </a>
-                                                                     
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                            <!-- // CONTENT TABLE -->
-
-
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                      <td style="height: 30px;"></td>
-                                                    </tr>
-
-                                                      <td align="center" valign="top"><!-- CENTERING TABLE // -->
-           <table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#f5f0cd" style="background-color: #ffffff;">
-            <tbody>
-             <tr>
-              <td align="center" valign="top"><!-- FLEXIBLE CONTAINER // -->
-               <table border="0" cellpadding="0" cellspacing="0" class="flexibleContainer" width="600">
-                <tbody>
-                 <tr>
-                  <td align="justify" class="flexibleContainerCell bottomShim" style="padding-top: 0; padding-bottom: 0; padding-left: 40px; text-align: center;" valign="top" width="600"><!-- CONTENT TABLE // -->
-                  <p style="text-align: center;">
-                   <img src="assets/akira_img/company_logo.png" style="display: inline-block;" /> 
-                   </p>
-                   <p>
-                     <a href="mailto:office@kira-all.ru" style="text-decoration: none;"><span style="color: #2f2f2f; font-size: 13px; font-weight: 300;">e-mail: office@kira-all.ru</span></a>
-                   </p>
-                   <!-- // CONTENT TABLE --></td>
-                 </tr>
-                </tbody>
-               </table>
-               <!-- // FLEXIBLE CONTAINER --></td>
-             </tr>
-             <tr>
-              <td style="height: 20px;"></td>
-             </tr>
-           
-            </tbody>
-           </table>
-           <!-- // CENTERING TABLE --></td>
-         </tr>
-         <!-- margin row --> <!-- end margin row --><!-- END MODULE ROW --><!-- footer --> <!-- footer --><!-- // MODULE ROW --></tbody>
-       </table>
-       <!-- // EMAIL CONTAINER --></td>
-     </tr>
-    </tbody>
-   </table>
-  </center>
- </body>
+              </table>
+              <!-- // EMAIL CONTAINER -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </center>
+    
+  </body>
 </html>
